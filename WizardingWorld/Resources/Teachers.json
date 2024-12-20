@@ -1,4 +1,4 @@
-﻿[
+[
   {
     "id": 1,
     "name": "Professor Furrywhisk",
@@ -14,7 +14,7 @@
     "id": 2,
     "name": "Professor Woofington",
     "species": "Grand Sorcerer Dog",
-    "personality": "Loud, boisterous, and always ready for adventure. His bark is louder than his bite, and he's the life of the classroom.",
+    "personality": "Loud, boisterous, and always ready for adventure. His bark is louder than his bite, and he\u0027s the life of the classroom.",
     "rating": 4,
     "teaches": [
       "Barkus Sonicus",
@@ -37,7 +37,151 @@
     "id": 5,
     "name": "Miss Millie Pom",
     "species": "Pixie Pomchi",
-    "personality": "Mischievous and fun-loving, she’s always casting playful illusions to keep her students on their toes.",
+    "personality": "Mischievous and fun-loving, she\u2019s always casting playful illusions to keep her students on their toes.",
+    "rating": 5,
+    "teaches": [
+      "Fluffius Maximus",
+      "Waggo Charmus",
+      "Puff of Sparkles"
+    ]
+  },
+  {
+    "id": 6,
+    "name": "Miss Jennie Pom",
+    "species": "Pixie Pomchi",
+    "personality": "Mischievous and fun-loving, she\u2019s always casting playful illusions to keep her students on their toes.",
+    "rating": 5,
+    "teaches": [
+      "Fluffius Maximus",
+      "Waggo Charmus",
+      "Puff of Sparkles"
+    ]
+  },
+  {
+    "id": 7,
+    "name": "Miss Jennie Pom",
+    "species": "Pixie Pomchi",
+    "personality": "Mischievous and fun-loving, she\u2019s always casting playful illusions to keep her students on their toes.",
+    "rating": 5,
+    "teaches": [
+      "Fluffius Maximus",
+      "Waggo Charmus",
+      "Puff of Sparkles"
+    ]
+  },
+  {
+    "id": 8,
+    "name": "Miss Jennie Pom",
+    "species": "Pixie Pomchi",
+    "personality": "Mischievous and fun-loving, she\u2019s always casting playful illusions to keep her students on their toes.",
+    "rating": 5,
+    "teaches": [
+      "Fluffius Maximus",
+      "Waggo Charmus",
+      "Puff of Sparkles"
+    ]
+  },
+  {
+    "id": 9,
+    "name": "Miss Jennie Pom",
+    "species": "Pixie Pomchi",
+    "personality": "Mischievous and fun-loving, she\u2019s always casting playful illusions to keep her students on their toes.",
+    "rating": 5,
+    "teaches": [
+      "Fluffius Maximus",
+      "Waggo Charmus",
+      "Puff of Sparkles"
+    ]
+  },
+  {
+    "id": 10,
+    "name": "Miss Jennie Pom",
+    "species": "Pixie Pomchi",
+    "personality": "Mischievous and fun-loving, she\u2019s always casting playful illusions to keep her students on their toes.",
+    "rating": 5,
+    "teaches": [
+      "Fluffius Maximus",
+      "Waggo Charmus",
+      "Puff of Sparkles"
+    ]
+  },
+  {
+    "id": 11,
+    "name": "Miss Jennie Pom",
+    "species": "Pixie Pomchi",
+    "personality": "Mischievous and fun-loving, she\u2019s always casting playful illusions to keep her students on their toes.",
+    "rating": 5,
+    "teaches": [
+      "Fluffius Maximus",
+      "Waggo Charmus",
+      "Puff of Sparkles"
+    ]
+  },
+  {
+    "id": 12,
+    "name": "gfdgd",
+    "species": "Pixie Pomchi",
+    "personality": "Mischievous and fun-loving, she\u2019s always casting playful illusions to keep her students on their toes.",
+    "rating": 5,
+    "teaches": [
+      "Fluffius Maximus",
+      "Waggo Charmus",
+      "Puff of Sparkles"
+    ]
+  },
+  {
+    "id": 13,
+    "name": "gfdgd",
+    "species": "Pixie Pomchi",
+    "personality": "Mischievous and fun-loving, she\u2019s always casting playful illusions to keep her students on their toes.",
+    "rating": 5,
+    "teaches": [
+      "Fluffius Maximus",
+      "Waggo Charmus",
+      "Puff of Sparkles"
+    ]
+  },
+  {
+    "id": 14,
+    "name": "gfdgd",
+    "species": "Pixie Pomchi",
+    "personality": "Mischievous and fun-loving, she\u2019s always casting playful illusions to keep her students on their toes.",
+    "rating": 5,
+    "teaches": [
+      "Fluffius Maximus",
+      "Waggo Charmus",
+      "Puff of Sparkles"
+    ]
+  },
+  {
+    "id": 15,
+    "name": "gfdgd",
+    "species": "Pixie Pomchi",
+    "personality": "Mischievous and fun-loving, she\u2019s always casting playful illusions to keep her students on their toes.",
+    "rating": 5,
+    "teaches": [
+      "Fluffius Maximus",
+      "Waggo Charmus",
+      "Puff of Sparkles"
+    ]
+  },
+  {
+    "id": 16,
+    "name": "gfdgd",
+    "species": "Pixie Pomchi",
+    "personality": "Mischievous and fun-loving, she\u2019s always casting playful illusions to keep her students on their toes.",
+    "rating": 5,
+    "teaches": [
+      "Fluffius Maximus",
+      "Waggo Charmus",
+      "Puff of Sparkles"
+    ]
+  },
+  {
+    "id": 17,
+    "name": "gfdgd",
+    "species": "Pixie Pomchi",
+    "personality": "Mischievous and fun-loving, she\u2019s always casting playful illusions to keep her students on their toes.",
     "rating": 5,
     "teaches": [
       "Fluffius Maximus",

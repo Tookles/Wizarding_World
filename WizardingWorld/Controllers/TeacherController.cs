@@ -13,12 +13,15 @@ namespace WizardingWorld.Controllers
         {
             _teacherService = teacherService;
         }
+
         [HttpGet]
         public IActionResult GetTeachers()
         {
             List<Teacher> teachers = _teacherService.GetAllTeachers();
             return Ok(teachers);
         }
+
+
         [HttpGet("{id}")]
         public IActionResult GetTeachersById(int id)
         {
@@ -27,13 +30,26 @@ namespace WizardingWorld.Controllers
             if (teachers.Count == 0) return NotFound($"Unable to find a teacher with id: {id}");
             return Ok(teachers);
         }
-        [HttpPost]
-        public IActionResult AddTeacherd(Teacher teacher)
+
+
+        [HttpPost()]
+        public IActionResult AddTeacher([FromBody] Teacher teacher)
         {
-            if (id < 1) return BadRequest();
-            List<Teacher> teachers = _teacherService.GetTeacherById(id);
-            if (teachers.Count == 0) return NotFound();
-            return Ok(teachers);
+            if (teacher.name == "")
+            {
+                return BadRequest();
+            }
+
+            Boolean IsSuccess = _teacherService.AddTeacher(teacher);
+            
+            if (IsSuccess)
+            {
+                return Created("/api/teacher", teacher);
+            } else
+            {
+                return StatusCode(500); 
+            }
+
         }
     }
 }
