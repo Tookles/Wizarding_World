@@ -1,0 +1,37 @@
+﻿[
+  {
+    "id": 1,
+    "name": "Fluffius Maximus",
+    "description": "A spell that instantly increases the fluffiness of the caster or the target, providing protection from physical and magical attacks.",
+    "casting_instructions": "Evie wags her tail three times and barks softly, while focusing on expanding her fluff."
+
+  },
+  {
+    "id": 2,
+    "name": "Barkus Sonicus",
+    "description": "A powerful sonic bark that can knock back enemies and break magical barriers.",
+    "casting_instructions": "Evie takes a deep breath and releases a sharp bark, focusing on the target with intense concentration."
+
+  },
+  {
+    "id": 3,
+    "name": "Waggo Charmus",
+    "description": "A spell that makes Evie's tail feel like it's wagging twice as fast as usual, though it stays perfectly normal. A favourite for parties and celebrations.",
+    "casting_instructions": "Evie wags her tail happily while barking once, feeling the magic of joy boost her energy, even though her tail moves the same."
+
+  },
+  {
+    "id": 4,
+    "name": "Invisible Fetch",
+    "description": "Evie casts this spell, and it makes her feel like she’s playing fetch with an invisible ball. She runs and plays, but no object actually exists.",
+    "casting_instructions": "Evie barks twice and pounces forward as if chasing a ball, happily believing in the magic of fetch."
+
+  },
+  {
+    "id": 5,
+    "name": "Puff of Sparkles",
+    "description": "A spell that causes the caster to surround themselves with sparkling magic",
+    "casting_instructions": "Evie spins in a circle and howls, with magical sparkles swirling around her."
+
+  }
+]

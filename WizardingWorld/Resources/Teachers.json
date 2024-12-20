@@ -1,0 +1,48 @@
+﻿[
+  {
+    "id": 1,
+    "name": "Professor Furrywhisk",
+    "species": "Wizard Cat",
+    "personality": "Wise, patient, and a bit aloof. Loves teaching magical creatures how to harness their innate powers.",
+    "rating": 1,
+    "teaches": [
+      "Fluffius Maximus",
+      "Puff of Sparkles"
+    ]
+  },
+  {
+    "id": 2,
+    "name": "Professor Woofington",
+    "species": "Grand Sorcerer Dog",
+    "personality": "Loud, boisterous, and always ready for adventure. His bark is louder than his bite, and he's the life of the classroom.",
+    "rating": 4,
+    "teaches": [
+      "Barkus Sonicus",
+      "Waggo Charmus",
+      "Invisible Fetch"
+    ]
+  },
+  {
+    "id": 3,
+    "name": "Madame Flufftail",
+    "species": "Enchantress Rabbit",
+    "personality": "Soft-spoken and nurturing. She encourages her students to always believe in the magic of self-care and fluff.",
+    "rating": 2,
+    "teaches": [
+      "Fluffius Maximus",
+      "Invisible Fetch"
+    ]
+  },
+  {
+    "id": 5,
+    "name": "Miss Millie Pom",
+    "species": "Pixie Pomchi",
+    "personality": "Mischievous and fun-loving, she’s always casting playful illusions to keep her students on their toes.",
+    "rating": 5,
+    "teaches": [
+      "Fluffius Maximus",
+      "Waggo Charmus",
+      "Puff of Sparkles"
+    ]
+  }
+]
