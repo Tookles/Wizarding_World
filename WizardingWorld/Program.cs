@@ -1,5 +1,6 @@
 using WizardingWorld.Models;
 using WizardingWorld.Services;
+using Microsoft.Extensions.Diagnostics.HealthChecks;
 
 namespace WizardingWorld
 {
@@ -14,6 +15,9 @@ namespace WizardingWorld
 
             builder.Services.AddScoped<ISpellRepository, SpellRepository>();
             builder.Services.AddScoped<ISpellService, SpellService>();
+            builder.Services.AddHealthChecks().AddCheck<TeacherHealthCheck>("teacher_health_check",
+                failureStatus: HealthStatus.Unhealthy,
+                tags: new[] { "file", "teacher" });
 
 
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
@@ -30,7 +34,7 @@ namespace WizardingWorld
                 app.UseSwaggerUI();
             }
 
-
+            app.UseHealthChecks("/health");
 
             app.UseHttpsRedirection();
 
