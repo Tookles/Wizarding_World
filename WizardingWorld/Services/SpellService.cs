@@ -7,7 +7,8 @@ namespace WizardingWorld.Services
 
     public interface ISpellService
     {
-        List<Spell> GetAllSpells(); 
+        List<Spell> GetAllSpells();
+        Spell GetRandomSpell();
     }
 
 
@@ -26,5 +27,9 @@ namespace WizardingWorld.Services
            return _spellRepository.FetchAllSpells();
         }
 
+        public Spell GetRandomSpell()
+        {
+            return _spellRepository.FetchRandomSpell();
+        }
     }
 }

@@ -1,6 +1,9 @@
 using WizardingWorld.Models;
 using WizardingWorld.Services;
 using Microsoft.Extensions.Diagnostics.HealthChecks;
+using Microsoft.AspNetCore.RateLimiting;
+using System.Threading.RateLimiting;
+using Microsoft.AspNetCore.Http.HttpResults;
 
 namespace WizardingWorld
 {
@@ -19,8 +22,21 @@ namespace WizardingWorld
             builder.Services.AddScoped<ITeacherService, TeacherService>();
             builder.Services.AddHealthChecks().AddCheck<TeacherHealthCheck>("teacher_health_check",
                 failureStatus: HealthStatus.Unhealthy,
-                tags: new[] { "file", "teacher" });
 
+                tags: new[] { "file", "teacher" });
+            builder.Services.AddRateLimiter(options =>
+            {
+                options.AddFixedWindowLimiter(policyName: "fixed", options =>
+                {
+                    options.PermitLimit = 3;
+                    options.Window = TimeSpan.FromMinutes(1);
+                });
+                options.OnRejected = (context, cancellationToken) =>
+                {
+                    context.HttpContext.Response.StatusCode = StatusCodes.Status429TooManyRequests;
+                    return new ValueTask();
+                };
+            });
 
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
@@ -35,6 +51,8 @@ namespace WizardingWorld
                 app.UseSwagger();
                 app.UseSwaggerUI();
             }
+
+            app.UseRateLimiter();
 
             app.UseHealthChecks("/health");
 
