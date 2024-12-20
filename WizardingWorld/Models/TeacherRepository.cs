@@ -8,7 +8,9 @@ namespace WizardingWorld.Models
         List<Teacher> FetchAllTeachers();
         List<Teacher> FetchTeacherById(int id);
         Boolean AddTeacher(Teacher teacher);
-        Boolean ExistById(int id); 
+        Boolean ExistById(int id);
+
+        void DeleteTeacherById(int id); 
 
     }
     public class TeacherRepository : ITeacherRepository
@@ -41,6 +43,15 @@ namespace WizardingWorld.Models
             File.WriteAllText(teacherPath, JsonSerializer.Serialize(allTeachers, new JsonSerializerOptions() { WriteIndented = true }));
             return ExistById(teacher.id);
         }
+
+        public void DeleteTeacherById(int id)
+        {
+            List<Teacher> allTeachers = JsonSerializer.Deserialize<List<Teacher>>(File.ReadAllText(teacherPath));
+            Teacher teacherToDelete = allTeachers.Where(t => t.id == id).First();
+            allTeachers.Remove(teacherToDelete);
+           // File.WriteAllText(teacherPath, JsonSerializer.Serialize(allTeachers, new JsonSerializerOptions() { WriteIndented = true }));
+        }
+
 
     }
 }

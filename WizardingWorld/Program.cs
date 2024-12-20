@@ -24,6 +24,8 @@ namespace WizardingWorld
                 failureStatus: HealthStatus.Unhealthy,
 
                 tags: new[] { "file", "teacher" });
+
+
             builder.Services.AddRateLimiter(options =>
             {
                 options.AddFixedWindowLimiter(policyName: "fixed", options =>

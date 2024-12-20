@@ -23,17 +23,6 @@
     ]
   },
   {
-    "id": 3,
-    "name": "Madame Flufftail",
-    "species": "Enchantress Rabbit",
-    "personality": "Soft-spoken and nurturing. She encourages her students to always believe in the magic of self-care and fluff.",
-    "rating": 2,
-    "teaches": [
-      "Fluffius Maximus",
-      "Invisible Fetch"
-    ]
-  },
-  {
     "id": 5,
     "name": "Miss Millie Pom",
     "species": "Pixie Pomchi",

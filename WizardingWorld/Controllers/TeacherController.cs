@@ -32,7 +32,7 @@ namespace WizardingWorld.Controllers
         }
 
 
-        [HttpPost()]
+        [HttpPost]
         public IActionResult AddTeacher([FromBody] Teacher teacher)
         {
             if (teacher.name == "")
@@ -51,5 +51,24 @@ namespace WizardingWorld.Controllers
             }
 
         }
+
+        [HttpDelete("{id}")]
+        public IActionResult DeleteTeacherById(int id)
+        {
+            if (id < 1) return BadRequest("Please enter a positive integer");
+
+            if (!_teacherService.ExistById(id)) return NotFound("No teacher exists with this Id");
+
+            _teacherService.DeleteTeacherById(id);
+
+            if (_teacherService.ExistById(id))
+            {
+                return StatusCode(500);
+            }
+            return NoContent();
+
+        }
+
+
     }
 }

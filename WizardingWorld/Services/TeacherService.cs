@@ -8,8 +8,15 @@ namespace WizardingWorld.Services
         List<Teacher> GetAllTeachers();
         List<Teacher> GetTeacherById(int id);
 
-        Boolean AddTeacher(Teacher teacher); 
+        Boolean AddTeacher(Teacher teacher);
+
+        void DeleteTeacherById(int id);
+
+        Boolean ExistById(int id); 
+
     }
+
+
     public class TeacherService : ITeacherService
     {
 
@@ -32,6 +39,16 @@ namespace WizardingWorld.Services
         public Boolean AddTeacher(Teacher teacher)
         {
             return _teacherRepository.AddTeacher(teacher);
+        }
+
+        public void DeleteTeacherById(int id)
+        {
+             _teacherRepository.DeleteTeacherById(id); 
+        }
+
+        public Boolean ExistById(int id)
+        {
+            return _teacherRepository.ExistById(id);
         }
 
     }
