@@ -18,7 +18,5 @@ namespace WizardingWorld.Models
             return allSpells;
 
         }
-
-
     }
 }

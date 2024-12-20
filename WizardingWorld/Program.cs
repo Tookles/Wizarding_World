@@ -15,6 +15,8 @@ namespace WizardingWorld
 
             builder.Services.AddScoped<ISpellRepository, SpellRepository>();
             builder.Services.AddScoped<ISpellService, SpellService>();
+            builder.Services.AddScoped<ITeacherRepository, TeacherRepository>();
+            builder.Services.AddScoped<ITeacherService, TeacherService>();
             builder.Services.AddHealthChecks().AddCheck<TeacherHealthCheck>("teacher_health_check",
                 failureStatus: HealthStatus.Unhealthy,
                 tags: new[] { "file", "teacher" });

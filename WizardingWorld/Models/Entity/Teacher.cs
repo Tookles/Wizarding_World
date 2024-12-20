@@ -1,6 +1,6 @@
 ﻿namespace WizardingWorld.Models.Entity
 {
-    internal class Teacher
+    public class Teacher
     {
         public int id { get; set; }
         public string name { get; set; }
