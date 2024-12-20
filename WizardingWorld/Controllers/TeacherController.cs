@@ -22,6 +22,14 @@ namespace WizardingWorld.Controllers
         [HttpGet("{id}")]
         public IActionResult GetTeachersById(int id)
         {
+            if (id < 1) return BadRequest("Please enter a positive integer");
+            List<Teacher> teachers = _teacherService.GetTeacherById(id);
+            if (teachers.Count == 0) return NotFound($"Unable to find a teacher with id: {id}");
+            return Ok(teachers);
+        }
+        [HttpPost]
+        public IActionResult AddTeacherd(Teacher teacher)
+        {
             if (id < 1) return BadRequest();
             List<Teacher> teachers = _teacherService.GetTeacherById(id);
             if (teachers.Count == 0) return NotFound();
