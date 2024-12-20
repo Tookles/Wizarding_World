@@ -4,6 +4,9 @@ using Microsoft.Extensions.Diagnostics.HealthChecks;
 using Microsoft.AspNetCore.RateLimiting;
 using System.Threading.RateLimiting;
 using Microsoft.AspNetCore.Http.HttpResults;
+using Newtonsoft.Json;
+using Microsoft.AspNetCore.Mvc.Formatters;
+using Microsoft.AspNetCore.Mvc.NewtonsoftJson;
 
 namespace WizardingWorld
 {
@@ -14,8 +17,7 @@ namespace WizardingWorld
             var builder = WebApplication.CreateBuilder(args);
 
 
-            builder.Services.AddControllers();
-
+            builder.Services.AddControllers().AddNewtonsoftJson();
             builder.Services.AddScoped<ISpellRepository, SpellRepository>();
             builder.Services.AddScoped<ISpellService, SpellService>();
             builder.Services.AddScoped<ITeacherRepository, TeacherRepository>();
@@ -55,8 +57,6 @@ namespace WizardingWorld
                 app.UseSwagger();
                 app.UseSwaggerUI();
             }
-
-            
 
             app.UseRateLimiter();
 

@@ -1,11 +1,12 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.JsonPatch;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Caching.Memory;
 using WizardingWorld.Models.Entity;
 using WizardingWorld.Services;
 
 namespace WizardingWorld.Controllers
 {
-    [Route("/api/teacher")]
+    [Route("/api/{controller}")]
     [ApiController]
     public class TeacherController : Controller
     {
@@ -90,6 +91,31 @@ namespace WizardingWorld.Controllers
 
         }
 
-
+        [HttpPatch("{id}")]
+        public IActionResult UpdateTeacherById(int id, [FromBody] JsonPatchDocument<Teacher> doc)
+        {
+            if (doc != null)
+            {
+                Teacher teacher = _teacherService.GetTeacherById(id).First();
+                doc.ApplyTo(teacher, ModelState);
+                if (!ModelState.IsValid) return BadRequest();
+                _teacherService.UpdateTeacher(teacher);
+                return Ok(teacher);
+            }
+            return BadRequest();
+        }
+        [HttpPatch]
+        public IActionResult UpdateTeacher([FromBody] JsonPatchDocument<Teacher> doc)
+        {
+            if (doc != null)
+            {
+                Teacher teacher = new();
+                doc.ApplyTo(teacher, ModelState);
+                if (!ModelState.IsValid) return BadRequest();
+                _teacherService.UpdateTeacher(teacher);
+                return Ok(teacher);
+            }
+            return BadRequest();
+        }
     }
 }

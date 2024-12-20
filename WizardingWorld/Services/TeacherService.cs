@@ -12,7 +12,9 @@ namespace WizardingWorld.Services
 
         void DeleteTeacherById(int id);
 
-        Boolean ExistById(int id); 
+        Boolean ExistById(int id);
+
+        void UpdateTeacher(Teacher teacher);
 
     }
 
@@ -51,5 +53,9 @@ namespace WizardingWorld.Services
             return _teacherRepository.ExistById(id);
         }
 
+        public void UpdateTeacher(Teacher teacher)
+        {
+            _teacherRepository.UpdateTeacher(teacher);
+        }
     }
 }
