@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Caching.Memory;
 using WizardingWorld.Models.Entity;
 using WizardingWorld.Services;
 
@@ -8,18 +9,38 @@ namespace WizardingWorld.Controllers
     [ApiController]
     public class TeacherController : Controller
     {
+
+        private readonly IMemoryCache _cache;
+
+        private const string TeacherCacheKey = "TeacherList"; 
+
+
         private readonly ITeacherService _teacherService;
-        public TeacherController(ITeacherService teacherService)
+
+        public TeacherController(ITeacherService teacherService, IMemoryCache memoryCache)
         {
             _teacherService = teacherService;
+            _cache = memoryCache;
         }
+
 
         [HttpGet]
         public IActionResult GetTeachers()
         {
-            List<Teacher> teachers = _teacherService.GetAllTeachers();
+            List<Teacher> teachers; 
+
+            if (!_cache.TryGetValue(TeacherCacheKey, out teachers))
+            {
+                teachers = _teacherService.GetAllTeachers();
+
+                var cacheEntryOptions = new MemoryCacheEntryOptions().SetAbsoluteExpiration(TimeSpan.FromMinutes(2));
+
+                _cache.Set(TeacherCacheKey, teachers, cacheEntryOptions);
+            }
+
             return Ok(teachers);
         }
+
 
 
         [HttpGet("{id}")]

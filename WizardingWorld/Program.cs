@@ -20,6 +20,8 @@ namespace WizardingWorld
             builder.Services.AddScoped<ISpellService, SpellService>();
             builder.Services.AddScoped<ITeacherRepository, TeacherRepository>();
             builder.Services.AddScoped<ITeacherService, TeacherService>();
+            builder.Services.AddMemoryCache(); 
+
             builder.Services.AddHealthChecks().AddCheck<TeacherHealthCheck>("teacher_health_check",
                 failureStatus: HealthStatus.Unhealthy,
 
@@ -53,6 +55,8 @@ namespace WizardingWorld
                 app.UseSwagger();
                 app.UseSwaggerUI();
             }
+
+            
 
             app.UseRateLimiter();
 

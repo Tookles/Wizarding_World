@@ -49,7 +49,7 @@ namespace WizardingWorld.Models
             List<Teacher> allTeachers = JsonSerializer.Deserialize<List<Teacher>>(File.ReadAllText(teacherPath));
             Teacher teacherToDelete = allTeachers.Where(t => t.id == id).First();
             allTeachers.Remove(teacherToDelete);
-           // File.WriteAllText(teacherPath, JsonSerializer.Serialize(allTeachers, new JsonSerializerOptions() { WriteIndented = true }));
+            File.WriteAllText(teacherPath, JsonSerializer.Serialize(allTeachers, new JsonSerializerOptions() { WriteIndented = true }));
         }
 
 

@@ -11,18 +11,6 @@
     ]
   },
   {
-    "id": 2,
-    "name": "Professor Woofington",
-    "species": "Grand Sorcerer Dog",
-    "personality": "Loud, boisterous, and always ready for adventure. His bark is louder than his bite, and he\u0027s the life of the classroom.",
-    "rating": 4,
-    "teaches": [
-      "Barkus Sonicus",
-      "Waggo Charmus",
-      "Invisible Fetch"
-    ]
-  },
-  {
     "id": 5,
     "name": "Miss Millie Pom",
     "species": "Pixie Pomchi",
