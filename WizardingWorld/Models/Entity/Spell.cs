@@ -6,5 +6,6 @@
         public string name { get; set; }
         public string description { get; set; }
         public string casting_instructions { get; set; }
+        public List<TeacherSpells> teacherSpells { get; set; }
     }
 }
