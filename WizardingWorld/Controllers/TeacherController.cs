@@ -10,21 +10,14 @@ namespace WizardingWorld.Controllers
     [ApiController]
     public class TeacherController : Controller
     {
-
         private readonly IMemoryCache _cache;
-
         private const string TeacherCacheKey = "TeacherList"; 
-
-
         private readonly ITeacherService _teacherService;
-
         public TeacherController(ITeacherService teacherService, IMemoryCache memoryCache)
         {
             _teacherService = teacherService;
             _cache = memoryCache;
         }
-
-
         [HttpGet]
         public IActionResult GetTeachers()
         {
@@ -38,12 +31,8 @@ namespace WizardingWorld.Controllers
 
                 _cache.Set(TeacherCacheKey, teachers, cacheEntryOptions);
             }
-
             return Ok(teachers);
         }
-
-
-
         [HttpGet("{id}")]
         public IActionResult GetTeachersById(int id)
         {
@@ -52,8 +41,6 @@ namespace WizardingWorld.Controllers
             if (teachers.Count == 0) return NotFound($"Unable to find a teacher with id: {id}");
             return Ok(teachers);
         }
-
-
         [HttpPost]
         public IActionResult AddTeacher([FromBody] Teacher teacher)
         {
@@ -61,9 +48,7 @@ namespace WizardingWorld.Controllers
             {
                 return BadRequest();
             }
-
-            Boolean IsSuccess = _teacherService.AddTeacher(teacher);
-            
+            Boolean IsSuccess = _teacherService.AddTeacher(teacher);           
             if (IsSuccess)
             {
                 return Created("/api/teacher", teacher);
@@ -71,9 +56,7 @@ namespace WizardingWorld.Controllers
             {
                 return StatusCode(500); 
             }
-
         }
-
         [HttpDelete("{id}")]
         public IActionResult DeleteTeacherById(int id)
         {
@@ -90,7 +73,6 @@ namespace WizardingWorld.Controllers
             return NoContent();
 
         }
-
         [HttpPatch("{id}")]
         public IActionResult UpdateTeacherById(int id, [FromBody] JsonPatchDocument<Teacher> doc)
         {

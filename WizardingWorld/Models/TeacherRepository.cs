@@ -13,17 +13,14 @@ namespace WizardingWorld.Models
     {
         List<Teacher> FetchAllTeachers();
         List<Teacher> FetchTeacherById(int id);
-        Boolean AddTeacher(Teacher teacher);
-        Boolean ExistById(int id);
-
+        bool AddTeacher(Teacher teacher);
+        bool ExistById(int id);
         void DeleteTeacherById(int id);
         void UpdateTeacher(Teacher teacher);
-
     }
     public class TeacherRepository : ITeacherRepository
     {
         string teacherPath = "Resources\\Teachers.json";
-
         public List<Teacher> FetchAllTeachers()
         {
             List<Teacher> allTeachers = systemSerializer.Deserialize<List<Teacher>>(File.ReadAllText(teacherPath));
@@ -34,15 +31,11 @@ namespace WizardingWorld.Models
             List<Teacher> allTeachers = systemSerializer.Deserialize<List<Teacher>>(File.ReadAllText(teacherPath));
             return allTeachers.Where(teacher => teacher.id == id).ToList();
         }
-
-
         public Boolean ExistById(int id)
         {
             List<Teacher> allTeachers = systemSerializer.Deserialize<List<Teacher>>(File.ReadAllText(teacherPath));
             return allTeachers.Where(t => t.id == id).Any();
         }
-
-
         public Boolean AddTeacher(Teacher teacher)
         {
             List<Teacher> allTeachers = systemSerializer.Deserialize<List<Teacher>>(File.ReadAllText(teacherPath));
@@ -51,7 +44,6 @@ namespace WizardingWorld.Models
             File.WriteAllText(teacherPath, systemSerializer.Serialize(allTeachers));
             return ExistById(teacher.id);
         }
-
         public void DeleteTeacherById(int id)
         {
             List<Teacher> allTeachers = systemSerializer.Deserialize<List<Teacher>>(File.ReadAllText(teacherPath));
@@ -59,7 +51,6 @@ namespace WizardingWorld.Models
             allTeachers.Remove(teacherToDelete);
             File.WriteAllText(teacherPath, systemSerializer.Serialize(allTeachers));
         }
-
         public void UpdateTeacher(Teacher teacher)
         {
             List<Teacher> allTeachers = systemSerializer.Deserialize<List<Teacher>>(File.ReadAllText(teacherPath));

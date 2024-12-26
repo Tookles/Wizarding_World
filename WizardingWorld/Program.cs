@@ -16,7 +16,6 @@ namespace WizardingWorld
         {
             var builder = WebApplication.CreateBuilder(args);
 
-
             builder.Services.AddControllers().AddNewtonsoftJson();
             builder.Services.AddScoped<ISpellRepository, SpellRepository>();
             builder.Services.AddScoped<ISpellService, SpellService>();
@@ -26,9 +25,7 @@ namespace WizardingWorld
 
             builder.Services.AddHealthChecks().AddCheck<TeacherHealthCheck>("teacher_health_check",
                 failureStatus: HealthStatus.Unhealthy,
-
                 tags: new[] { "file", "teacher" });
-
 
             builder.Services.AddRateLimiter(options =>
             {
@@ -43,33 +40,22 @@ namespace WizardingWorld
                     return new ValueTask();
                 };
             });
-
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
-
-
             var app = builder.Build();
-
             //Configure the HTTP request pipeline.
             if (app.Environment.IsDevelopment())
             {
                 app.UseSwagger();
                 app.UseSwaggerUI();
             }
-
             app.UseRateLimiter();
-
             app.UseHealthChecks("/health");
-
             app.UseHttpsRedirection();
-
             app.UseAuthorization();
-
             app.MapControllers();
-
             app.Run();
-
         }
     }
 }
